@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>98.css example</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+  <div class="menu">
+    <button id="start"> <img src="images/start.jpeg" style="width:25px;height:20px;" >Start</button>
+    
+    <button class="tab" id="welcometab" onclick="ShowTab('welcome')"> Welcome </button>
+
+    <button class="tab" id="abouttab" onclick="ShowTab('about')"> About </button>
+    
+    <span class="status-bar-field" id="time" style="width:70px;height:25px;"></span>
+  </div>
+
+
+  <div class="window" id="about" style="width: 300px">
+    <header>
+      <div class="title-bar" id="aboutheader">
+        <div class="title-bar-text">About</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="ShowTab('about')"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close" onclick="CloseTab('about')"></button>
+        </div>
+      </div>
+    </header>
+    <div class="window-body">
+      <p>about me :3</p>
+    </div>
+  </div>
+
+  <div class="window" id="welcome" style="width: 300px">
+    <header>
+      <div class="title-bar" id="welcomeheader">
+        <div class="title-bar-text">Welcome</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="ShowTab('welcome')"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close" onclick="CloseTab('welcome')"></button>
+        </div>
+      </div>
+    </header>
+    <div class="window-body">
+      <p>me when tab</p>
+    </div>
+  </div>
+
+
+  <script src="scripts.js"></script>
+</body>
+</html>
