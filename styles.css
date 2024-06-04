@@ -176,8 +176,6 @@ input[type="reset"] {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   border-radius: 0;
 
-  min-width: 75px;
-  min-height: 23px;
   padding: 0 12px;
 }
 
@@ -272,7 +270,10 @@ input[type="reset"]:disabled,
     align-items: center;
 }
 
-
+.shortcut {
+  margin: 10px;
+  font-family: "Pixelated MS Sans Serif";
+}
 
 
 
@@ -304,6 +305,15 @@ input[type="reset"]:disabled,
     right: 10px;
     font-family: "Pixelated MS Sans Serif";
     font-weight: normal;
+}
+
+#sc-about {
+  width: fit-content;
+  height: fit-content;
+  background: none;
+  outline: none;
+  box-shadow: none;
+
 }
 
 .hide {

@@ -66,9 +66,14 @@ function ShowTab(id) {
 function CloseTab(id) {
     ShowTab(id);
     var element = document.getElementById(id + "tab"); 
-    if (element.classList.contains('hide')) {
-      element.classList.remove('hide');
-    } else{
-      element.classList.add('hide');
-    }
+    element.classList.add('hide');
 }
+
+function OpenTab(id) {
+  var element = document.getElementById(id + "tab"); 
+  if (element.classList.contains('hide')) {
+    element.classList.remove('hide');
+    ShowTab(id);
+  }
+}
+
