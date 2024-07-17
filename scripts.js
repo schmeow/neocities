@@ -1,3 +1,6 @@
+CloseTab('about')
+CloseTab('welcome')
+
 function updateDateTime() {
   const now = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
   document.querySelector('#time').textContent = now;
@@ -11,14 +14,14 @@ setInterval(updateDateTime, 1000);
 dragElement(document.getElementById("about"));
 dragElement(document.getElementById("welcome"));
 
-function dragElement(elmnt) {
+function dragElement(tab) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
+  if (document.getElementById(tab.id + "header")) {
     // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    document.getElementById(tab.id + "header").onmousedown = dragMouseDown;
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
+    tab.onmousedown = dragMouseDown;
   }
 
   function dragMouseDown(e) {
@@ -41,8 +44,15 @@ function dragElement(elmnt) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    tab.style.top = (tab.offsetTop - pos2) + "px";
+    tab.style.left = (tab.offsetLeft - pos1) + "px";
+
+    var tabs = document.getElementsByClassName('window');
+    for (var i = 0; i++; i<tabs.length()) {
+      tabs[i].classList.add('back');
+    }
+    tab.classList.remove('back');
+    tab.classList.add('front');
   }
 
   function closeDragElement() {
@@ -77,3 +87,14 @@ function OpenTab(id) {
   }
 }
 
+
+function Maximize(id) {
+  var element = document.getElementById(id); 
+  if (element.classList.contains('max')) {
+    element.classList.remove('max');
+  }
+  else {
+    element.classList.add('max');
+    element.classList.add('front')
+  }
+}

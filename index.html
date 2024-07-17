@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>98.css example</title>
+  <title>schmeow</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="styles.css"/>
 </head>
@@ -18,7 +18,8 @@
   </div>
 
   <div> 
-    <button class="shortcut" id="sc-about" onclick="OpenTab('about')"><img src="images/about.png" style="height: 40px; width: 40px;"> <br> About</button>
+    <button class="shortcut" id="sc-about" onclick="OpenTab('about')" style="margin-left: 18px;"><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"> <br>About</button>
+    <button class="shortcut" id="sc-about" onclick="OpenTab('welcome')"><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"> <br>Welcome</button>
   </div>
 
   <div class="window" id="about" style="width: 300px">
@@ -27,7 +28,7 @@
         <div class="title-bar-text">About</div>
         <div class="title-bar-controls">
           <button aria-label="Minimize" onclick="ShowTab('about')"></button>
-          <button aria-label="Maximize"></button>
+          <button aria-label="Maximize" onclick="Maximize('about')"></button>
           <button aria-label="Close" onclick="CloseTab('about')"></button>
         </div>
       </div>
@@ -43,7 +44,7 @@
         <div class="title-bar-text">Welcome</div>
         <div class="title-bar-controls">
           <button aria-label="Minimize" onclick="ShowTab('welcome')"></button>
-          <button aria-label="Maximize"></button>
+          <button aria-label="Maximize" onclick="Maximize('welcome')"></button>
           <button aria-label="Close" onclick="CloseTab('welcome')"></button>
         </div>
       </div>

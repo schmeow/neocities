@@ -272,6 +272,9 @@ input[type="reset"]:disabled,
 
 .shortcut {
   margin: 10px;
+  margin-bottom: 30px;
+  display: block;
+  color: white;
   font-family: "Pixelated MS Sans Serif";
 }
 
@@ -334,4 +337,63 @@ input[type="reset"]:disabled,
   position: static;
   transform: translateY(-15%);
   text-align: start;
+}
+
+
+button.shortcut,
+input[type="submit"],
+input[type="reset"] {
+  box-sizing: border-box;
+  border: none;
+  text-shadow: 0 0 var(--text-color);
+  background: var(--surface);
+  box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+  border-radius: 0;
+
+  padding: 0 12px;
+}
+
+button.shortcut:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+  color: #000000;
+  /* background-color: #000080;
+  border: 2px solid black;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer; */
+}
+
+.button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 0, 0, 1); /* Change the color and opacity as needed */
+}
+
+
+
+.front{
+  z-index: 1;
+}
+
+.back{
+  z-index: 0;
+}
+
+.max{
+  display: block;
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 95%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
