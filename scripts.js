@@ -48,7 +48,7 @@ function dragElement(tab) {
     tab.style.left = (tab.offsetLeft - pos1) + "px";
 
     var tabs = document.getElementsByClassName('window');
-    for (var i = 0; i++; i<tabs.length()) {
+    for (var i = 0; i < tabs.length; i++) {
       tabs[i].classList.add('back');
     }
     tab.classList.remove('back');
