@@ -256,9 +256,7 @@ input[type="reset"]:disabled,
 }
 
 .status-bar {
-    margin: 0px 1px;
     display: flex;
-    gap: 1px;
 }
   
 .status-bar-field {

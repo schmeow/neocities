@@ -13,6 +13,8 @@ setInterval(updateDateTime, 1000);
 // Make the DIV element draggable:
 dragElement(document.getElementById("about"));
 dragElement(document.getElementById("welcome"));
+console.log(window.innerWidth);
+console.log(window.innerHeight)
 
 function dragElement(tab) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -45,8 +47,26 @@ function dragElement(tab) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element's new position:
-    tab.style.top = (tab.offsetTop - pos2) + "px";
-    tab.style.left = (tab.offsetLeft - pos1) + "px";
+    if ((tab.offsetTop - pos2) < 0) {
+      tab.style.top = 0 + "px";
+    }
+    else if ((tab.offsetTop - pos2) > (window.innerHeight - 40 - tab.offsetHeight)) {
+      tab.style.top = (window.innerHeight - 40 - tab.offsetHeight) + "px";
+    }
+    else {
+      tab.style.top = (tab.offsetTop - pos2) + "px";
+    }
+    if ((tab.offsetLeft - pos2) < 0) {
+      tab.style.left = 0 + "px";
+    }
+    else if ((tab.offsetLeft - pos2) > (window.innerWidth - tab.offsetWidth)) {
+      tab.style.left = (window.innerWidth - tab.offsetWidth) + "px";
+    }
+    else {
+      tab.style.left = (tab.offsetLeft - pos1) + "px";
+    }
+    console.log(tab.offsetTop - pos2)
+    console.log(tab.offsetLeft - pos1)
 
     var tabs = document.getElementsByClassName('window');
     for (var i = 0; i < tabs.length; i++) {
