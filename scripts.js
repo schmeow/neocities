@@ -36,6 +36,7 @@ function dragElement(tab) {
   }
 
   function elementDrag(e) {
+    console.log(e)
     e = e || window.event;
     e.preventDefault();
     // calculate the new cursor position:
@@ -92,9 +93,19 @@ function Maximize(id) {
   var element = document.getElementById(id); 
   if (element.classList.contains('max')) {
     element.classList.remove('max');
+    dragElement(element);
   }
   else {
+    var header =  document.getElementById(id + "header")
     element.classList.add('max');
     element.classList.add('front')
+    
+    header.onmousedown = null;
+    header.onmousemove = null;
+    element.onmousedown = null;
+    element.onmousemove = null;
+    
+    element.style.top = 0 + "px";
+    element.style.left = 0 + "px";
   }
 }
