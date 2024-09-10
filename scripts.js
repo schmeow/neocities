@@ -13,8 +13,6 @@ setInterval(updateDateTime, 1000);
 // Make the DIV element draggable:
 dragElement(document.getElementById("about"));
 dragElement(document.getElementById("welcome"));
-console.log(window.innerWidth);
-console.log(window.innerHeight)
 
 function dragElement(tab) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -38,7 +36,6 @@ function dragElement(tab) {
   }
 
   function elementDrag(e) {
-    console.log(e)
     e = e || window.event;
     e.preventDefault();
     // calculate the new cursor position:
@@ -50,23 +47,19 @@ function dragElement(tab) {
     if ((tab.offsetTop - pos2) < 0) {
       tab.style.top = 0 + "px";
     }
-    else if ((tab.offsetTop - pos2) > (window.innerHeight - 40 - tab.offsetHeight)) {
-      tab.style.top = (window.innerHeight - 40 - tab.offsetHeight) + "px";
+    else if ((tab.offsetTop - pos2) > (window.innerHeight - 50 - tab.offsetHeight)) {
+      tab.style.top = (window.innerHeight - 50 - tab.offsetHeight) + "px";
     }
     else {
       tab.style.top = (tab.offsetTop - pos2) + "px";
     }
-    if ((tab.offsetLeft - pos2) < 0) {
+    if (tab.offsetLeft - pos1 < 10) {
       tab.style.left = 0 + "px";
-    }
-    else if ((tab.offsetLeft - pos2) > (window.innerWidth - tab.offsetWidth)) {
+    } else if (tab.offsetLeft - pos1 > window.innerWidth - tab.offsetWidth - 10) {
       tab.style.left = (window.innerWidth - tab.offsetWidth) + "px";
-    }
-    else {
+    } else {
       tab.style.left = (tab.offsetLeft - pos1) + "px";
     }
-    console.log(tab.offsetTop - pos2)
-    console.log(tab.offsetLeft - pos1)
 
     var tabs = document.getElementsByClassName('window');
     for (var i = 0; i < tabs.length; i++) {
@@ -118,7 +111,6 @@ function Maximize(id) {
   else {
     var header =  document.getElementById(id + "header")
     element.classList.add('max');
-    element.classList.add('front')
     
     header.onmousedown = null;
     header.onmousemove = null;
@@ -127,5 +119,11 @@ function Maximize(id) {
     
     element.style.top = 0 + "px";
     element.style.left = 0 + "px";
+
+    var tabs = document.getElementsByClassName('window');
+    for (var i = 0; i <= tabs.length; i++) {
+      tabs[i].classList.add('back');
+    }
+    element.classList.add('front');
   }
 }

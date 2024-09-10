@@ -90,6 +90,7 @@ body {
 
 .window-body {
   margin: var(--element-spacing);
+  width: max-content;
 }
 
 .title-bar {
@@ -246,7 +247,7 @@ input[type="reset"]:disabled,
 .menu {
     position: fixed;
     width: 100%;
-    height: 30px;
+    height: 40px;
     bottom: 0;
     left: 0;
     padding: 5px;
@@ -279,7 +280,8 @@ input[type="reset"]:disabled,
 
 
 #start {
-    height: 30px;
+    height: 40px;
+    width: 80px;
     padding-left:2px;
     padding-right:5px;
     margin-bottom: 10px;
@@ -293,8 +295,8 @@ input[type="reset"]:disabled,
 }
   
 #time {
-    height: 30px;
-    width: 60px;
+    height: 50px;
+    width: 80px;
     padding-left:2px;
     padding-right:5px;
     display: inline-flex;
@@ -324,11 +326,11 @@ input[type="reset"]:disabled,
 .tab {
   font-family: "Pixelated MS Sans Serif";
   font-weight: normal;
-  height: 30px;
+  height: 40px;
   width: 220px;
   padding-left:10px;
   padding-right:5px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-left: 5px;
   font-weight: thin;
   font-size:17px;
@@ -354,9 +356,8 @@ input[type="reset"] {
 button.shortcut:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus {
-  outline: 1px dotted #000000;
-  outline-offset: -4px;
-  color: #000000;
+  outline: 5px solid #ffffff;
+  color: #ffffff;
   /* background-color: #000080;
   border: 2px solid black;
   background-color: white;
