@@ -1,5 +1,6 @@
 CloseTab('about')
 CloseTab('welcome')
+CloseTab('projects')
 
 function updateDateTime() {
   const now = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
@@ -13,6 +14,7 @@ setInterval(updateDateTime, 1000);
 // Make the DIV element draggable:
 dragElement(document.getElementById("about"));
 dragElement(document.getElementById("welcome"));
+dragElement(document.getElementById("projects"));
 
 function dragElement(tab) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
