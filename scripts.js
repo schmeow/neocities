@@ -1,5 +1,4 @@
 CloseTab('about')
-CloseTab('welcome')
 CloseTab('projects')
 
 function updateDateTime() {
@@ -86,6 +85,12 @@ function ShowTab(id) {
   } else{
     element.classList.add('hide');
   }
+  var tabs = document.getElementsByClassName('window');
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].classList.add('back');
+    }
+    element.classList.remove('back');
+    element.classList.add('front');
 }
 
 

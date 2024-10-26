@@ -81,6 +81,8 @@ body {
   position: absolute;
   cursor: move;
   user-select: none;
+  top: 25%; 
+  left: 20%; 
 }
 
 .window[role=tabpanel] {
@@ -318,6 +320,8 @@ input[type="reset"]:disabled,
   box-shadow: none;
 
 }
+
+
 
 .hide {
   display: none;
