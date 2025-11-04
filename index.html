@@ -3,12 +3,13 @@
 <head>
   <title>schmeow</title>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="styles.css"/>
 </head>
 
 <body class="bigmax">
   <div class="menu">
-    <button id="start"> <img src="images/start.jpeg" style="width:25px;height:30px;" >Start</button>
+    <button id="start"> <img src="images/start.jpeg" style="width:50%;height:80%;" >Start</button>
     
     <button class="tab" id="welcometab" onclick="ShowTab('welcome')"> Welcome </button>
 
@@ -16,14 +17,14 @@
 
     <button class="tab" id="projectstab" onclick="ShowTab('projects')"> Projects </button>
     
-    <span class="status-bar-field" id="time" style="width:90px;height:35px;"></span>
+    <span class="status-bar-field" id="time" style="width:10%;height:70%;"></span>
   </div>
 
-  <div> 
-    <button class="shortcut" id="sc-about" onclick="OpenTab('welcome')"><div #test><img src="images/about.svg" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Welcome</span></button>
+  <div class="shortcuts-container"> 
+    <button class="shortcut" id="sc-about" onclick="OpenTab('welcome')"><div #test><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Welcome</span></button>
 
-    <button class="shortcut" id="sc-about" onclick="OpenTab('about')" style="margin-left: 18px;"><img src="images/about.svg" style="height: 40px; width: 40px; margin-bottom: 5px;"> <br><span>About</span></button>
-    <button class="shortcut" id="sc-about" onclick="OpenTab('projects')"><div #test><img src="images/about.svg" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Projects</span></button>
+    <button class="shortcut" id="sc-about" onclick="OpenTab('about')" style="margin-left: 18px;"><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"> <br><span>About</span></button>
+    <button class="shortcut" id="sc-about" onclick="OpenTab('projects')"><div #test><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Projects</span></button>
   </div>
 
   <div class="window" id="about">
@@ -62,11 +63,12 @@
           <p>This whole thing is based off of Windows 95 (if you couldn't tell already), <br> and handcoded by mee</p>
           <p>I don't really know what I'm gonna put here other than projects and stuff, <br> but might make a photo area as well :3</p>
           <br>
-          <img src="images/pixel1.gif" style="margin-right:2%;"><img src="images/pixel2.gif" style="margin-right:2%;"><img src="images/pixel3.gif">
-          <div style="margin-top: 2%";> <img src="images/stamp1.gif" style="margin-right:2%; margin-left: 2%;"> <img src="images/stamp2.gif" style="margin-right:2%"> <img src="images/stamp3.png" style="margin-right:2%"> <img src="images/stamp4.png" style="margin-right:2%"> </div>
+          <!-- Image placeholders - add your images when ready -->
+          <!-- <img src="images/pixel1.gif" style="margin-right:2%;"><img src="images/pixel2.gif" style="margin-right:2%;"><img src="images/pixel3.gif"> -->
+          <!-- <div style="margin-top: 2%";> <img src="images/stamp1.gif" style="margin-right:2%; margin-left: 2%;"> <img src="images/stamp2.gif" style="margin-right:2%"> <img src="images/stamp3.png" style="margin-right:2%"> <img src="images/stamp4.png" style="margin-right:2%"> </div> -->
         </div>
         <div class="column">
-          <div><img src="images/mefr.jpg" alt="meow"></div>
+          <div><img src="images/pfp.jpeg" alt="meow"></div>
         </div>
       </div>
     </div>

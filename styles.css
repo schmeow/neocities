@@ -21,9 +21,10 @@
     --radio-label-spacing: 6px;
     --range-track-height: 4px;
     --range-spacing: 10px;
+
   
     /* Borders */
-    --border-width: 1px;
+    --border-width: 0.0625em;
     --border-raised-outer: inset -1px -1px var(--window-frame),
       inset 1px 1px var(--button-highlight);
     --border-raised-inner: inset -2px -2px var(--button-shadow),
@@ -72,17 +73,23 @@ body {
     padding: 0;
     background: #008080;
     font-family: "Pixelated MS Sans Serif", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 .window {
   box-shadow: var(--border-window-outer), var(--border-window-inner);
   background: var(--surface);
-  padding: 3px;
+  padding: 0.1875em;
   position: absolute;
   cursor: move;
   user-select: none;
   top: 25%; 
-  left: 20%; 
+  left: 20%;
+  max-width: calc(100vw - 1.25em);
+  max-height: calc(100vh - 3.75em);
+  overflow: auto;
 }
 
 .window[role=tabpanel] {
@@ -93,14 +100,21 @@ body {
 .window-body {
   margin: var(--element-spacing);
   width: max-content;
+  max-width: 100%;
+}
+
+.window-body img {
+  max-width: 100%;
+  height: auto;
 }
 
 .title-bar {
   background: var(--dialog-blue);
-  padding: 3px 2px 3px 3px;
+  padding: 0.1875em 0.125em 0.1875em 0.1875em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 1.25em;
 }
 
 .title-bar.inactive {
@@ -115,7 +129,12 @@ body {
   font-weight: bold;
   color: white;
   letter-spacing: 0;
-  margin-right: 24px;
+  margin-right: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
 }
 
 .title-bar-controls {
@@ -125,8 +144,10 @@ body {
 .title-bar-controls button {
   padding: 0;
   display: block;
-  min-width: 16px;
-  min-height: 14px;
+  min-width: 1em;
+  min-height: 0.875em;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .title-bar-controls button:active {
@@ -140,7 +161,7 @@ body {
 .title-bar-controls button[aria-label="Minimize"] {
   background-image: url("icons/minimize.svg");
   background-repeat: no-repeat;
-  background-position: bottom 3px left 4px;
+  background-position: bottom 0.1875em left 0.25em;
 }
 
 .title-bar-controls button[aria-label="Maximize"] {
@@ -178,8 +199,9 @@ input[type="reset"] {
   background: var(--surface);
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
   border-radius: 0;
-
   padding: 0 12px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:not(:disabled):active,
@@ -249,13 +271,18 @@ input[type="reset"]:disabled,
 .menu {
     position: fixed;
     width: 100%;
-    height: 40px;
+    height: 50px;
     bottom: 0;
     left: 0;
-    padding: 5px;
+    padding: 5px 5px 8px 5px;
     background-color: #c3c3c3;
-    display: inline;
+    display: flex;
     align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .status-bar {
@@ -271,12 +298,21 @@ input[type="reset"]:disabled,
     align-items: center;
 }
 
+.shortcuts-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 60px;
+}
+
 .shortcut {
   margin: 10px;
   margin-bottom: 30px;
   display: block;
   color: white;
   font-family: "Pixelated MS Sans Serif";
+  min-width: 80px;
+  touch-action: manipulation;
 }
 
 
@@ -286,7 +322,7 @@ input[type="reset"]:disabled,
     width: 80px;
     padding-left:2px;
     padding-right:5px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     font-weight:bold;
     font-size:17px;
     display: inline-flex;
@@ -334,12 +370,11 @@ input[type="reset"]:disabled,
   width: 220px;
   padding-left:10px;
   padding-right:5px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   margin-left: 5px;
   font-weight: thin;
   font-size:17px;
   position: static;
-  transform: translateY(-15%);
   text-align: start;
 }
 
@@ -412,4 +447,192 @@ input[type="reset"]:focus {
 .bigmax{
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .window {
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .window.max {
+    width: 100%;
+    height: calc(100vh - 50px);
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: calc(100vh - 50px);
+  }
+
+  .window-body {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .window-body .row {
+    flex-direction: column !important;
+    margin: 0 !important;
+  }
+
+  .window-body .column {
+    width: 100% !important;
+    padding: 10px !important;
+    box-sizing: border-box;
+  }
+
+  .window-body .column img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .menu {
+    height: 25px;
+    padding: 3px 5px;
+  }
+
+  #start {
+    height: 20px;
+    width: 50px;
+    font-size: 10px;
+    padding: 0 5px;
+  }
+
+  #start img {
+    width: 12px !important;
+    height: 14px !important;
+  }
+
+  .tab {
+    height: 20px;
+    width: auto;
+    min-width: 60px;
+    padding: 0 5px;
+    font-size: 10px;
+    margin-left: 3px;
+    margin-bottom: 0;
+  }
+
+  #time {
+    height: 20px;
+    width: 50px;
+    font-size: 9px;
+    right: 5px;
+  }
+
+  .shortcuts-container {
+    padding: 10px 5px;
+    justify-content: center;
+  }
+
+  .shortcut {
+    margin: 8px;
+    min-width: 70px;
+    font-size: 12px;
+  }
+
+  .shortcut img {
+    height: 32px !important;
+    width: 32px !important;
+  }
+
+  .title-bar-text {
+    font-size: 12px;
+    margin-right: 8px;
+  }
+
+  .title-bar-controls button {
+    min-width: 20px;
+    min-height: 18px;
+  }
+
+  .window-body p {
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .window-body img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .window-body br {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .window {
+    top: 5%;
+    left: 2.5%;
+    width: 95%;
+    max-width: 95%;
+  }
+
+  .window.max {
+    width: 100%;
+    height: calc(100vh - 25px);
+    top: 0;
+    left: 0;
+  }
+
+  .menu {
+    height: 25px;
+    padding: 2px 5px;
+  }
+
+  #start {
+    height: 18px;
+    width: 45px;
+    font-size: 9px;
+    padding: 0 4px;
+  }
+
+  #start img {
+    width: 10px !important;
+    height: 12px !important;
+  }
+
+  .tab {
+    height: 18px;
+    width: auto;
+    min-width: 50px;
+    padding: 0 4px;
+    font-size: 9px;
+    margin-left: 2px;
+    margin-bottom: 0;
+  }
+
+  #time {
+    height: 18px;
+    width: 45px;
+    font-size: 8px;
+    right: 3px;
+  }
+
+  .shortcut {
+    margin: 5px;
+    min-width: 60px;
+    font-size: 11px;
+  }
+
+  .shortcut img {
+    height: 28px !important;
+    width: 28px !important;
+  }
+
+  .window-body p {
+    font-size: 12px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .window-body br {
+    display: none;
+  }
 }

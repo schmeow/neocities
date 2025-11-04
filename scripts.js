@@ -17,49 +17,92 @@ dragElement(document.getElementById("projects"));
 
 function dragElement(tab) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(tab.id + "header")) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(tab.id + "header").onmousedown = dragMouseDown;
+  var header = document.getElementById(tab.id + "header");
+  var target = header || tab;
+
+  // Mouse events
+  if (header) {
+    header.onmousedown = dragMouseDown;
+    header.ontouchstart = dragTouchStart;
   } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
     tab.onmousedown = dragMouseDown;
+    tab.ontouchstart = dragTouchStart;
+  }
+
+  function getClientPos(e) {
+    if (e.touches && e.touches.length > 0) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }
+    return { x: e.clientX, y: e.clientY };
   }
 
   function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
+    var pos = getClientPos(e);
+    pos3 = pos.x;
+    pos4 = pos.y;
     document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
+  }
+
+  function dragTouchStart(e) {
+    e.preventDefault();
+    var pos = getClientPos(e);
+    pos3 = pos.x;
+    pos4 = pos.y;
+    document.ontouchend = closeDragElement;
+    document.ontouchmove = elementDragTouch;
+    
+    // Bring window to front
+    var tabs = document.getElementsByClassName('window');
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].classList.add('back');
+    }
+    tab.classList.remove('back');
+    tab.classList.add('front');
   }
 
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
+    updatePosition(e);
+  }
+
+  function elementDragTouch(e) {
+    e.preventDefault();
+    updatePosition(e);
+  }
+
+  function updatePosition(e) {
+    var pos = getClientPos(e);
     // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
+    pos1 = pos3 - pos.x;
+    pos2 = pos4 - pos.y;
+    pos3 = pos.x;
+    pos4 = pos.y;
+    
     // set the element's new position:
-    if ((tab.offsetTop - pos2) < 0) {
+    var newTop = tab.offsetTop - pos2;
+    var newLeft = tab.offsetLeft - pos1;
+    var menuHeight = 50; // Account for menu bar
+    
+    if (newTop < 0) {
       tab.style.top = 0 + "px";
     }
-    else if ((tab.offsetTop - pos2) > (window.innerHeight - 50 - tab.offsetHeight)) {
-      tab.style.top = (window.innerHeight - 50 - tab.offsetHeight) + "px";
+    else if (newTop > (window.innerHeight - menuHeight - tab.offsetHeight)) {
+      tab.style.top = (window.innerHeight - menuHeight - tab.offsetHeight) + "px";
     }
     else {
-      tab.style.top = (tab.offsetTop - pos2) + "px";
+      tab.style.top = newTop + "px";
     }
-    if (tab.offsetLeft - pos1 < 10) {
+    
+    if (newLeft < 10) {
       tab.style.left = 0 + "px";
-    } else if (tab.offsetLeft - pos1 > window.innerWidth - tab.offsetWidth - 10) {
+    } else if (newLeft > window.innerWidth - tab.offsetWidth - 10) {
       tab.style.left = (window.innerWidth - tab.offsetWidth) + "px";
     } else {
-      tab.style.left = (tab.offsetLeft - pos1) + "px";
+      tab.style.left = newLeft + "px";
     }
 
     var tabs = document.getElementsByClassName('window');
@@ -74,6 +117,8 @@ function dragElement(tab) {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
+    document.ontouchend = null;
+    document.ontouchmove = null;
   }
 }
 
@@ -119,16 +164,23 @@ function Maximize(id) {
     var header =  document.getElementById(id + "header")
     element.classList.add('max');
     
+    // Remove mouse event listeners
     header.onmousedown = null;
     header.onmousemove = null;
     element.onmousedown = null;
     element.onmousemove = null;
     
+    // Remove touch event listeners
+    header.ontouchstart = null;
+    header.ontouchmove = null;
+    element.ontouchstart = null;
+    element.ontouchmove = null;
+    
     element.style.top = 0 + "px";
     element.style.left = 0 + "px";
 
     var tabs = document.getElementsByClassName('window');
-    for (var i = 0; i <= tabs.length; i++) {
+    for (var i = 0; i < tabs.length; i++) {
       tabs[i].classList.add('back');
     }
     element.classList.add('front');
