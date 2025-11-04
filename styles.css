@@ -333,8 +333,8 @@ input[type="reset"]:disabled,
 }
   
 #time {
-    height: 50px;
-    width: 80px;
+    height: 80%;
+    width: 60%;
     padding-left:2px;
     padding-right:5px;
     display: inline-flex;
@@ -346,6 +346,7 @@ input[type="reset"]:disabled,
     right: 10px;
     font-family: "Pixelated MS Sans Serif";
     font-weight: normal;
+    font-size: 95%;
 }
 
 #sc-about {
