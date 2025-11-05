@@ -133,20 +133,11 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 20px;
+  width: 10px;
   height: 20px;
   cursor: nwse-resize;
   z-index: 1001;
-  background-color: var(--surface);
-  background-image: 
-    repeating-linear-gradient(
-      135deg,
-      var(--button-shadow),
-      var(--button-shadow) 1px,
-      var(--button-highlight) 1px,
-      var(--button-highlight) 2px
-    );
-  background-size: 4px 4px;
+  background-image: url("icons/indicator-rectangle-horizontal.svg");
   touch-action: none;
   pointer-events: auto;
   border: none;
@@ -553,6 +544,7 @@ input[type="reset"]:focus {
   .window-body {
     width: 100%;
     max-width: 100%;
+    margin-right: 10px;
   }
 
   .window-body .row {
