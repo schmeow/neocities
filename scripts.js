@@ -1,5 +1,6 @@
 CloseTab('about')
 CloseTab('projects')
+CloseTab('resume')
 
 var windowZIndexBase = 10; 
 var windowZIndexCounter = 10;

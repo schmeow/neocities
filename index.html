@@ -17,7 +17,7 @@
 
     <button class="tab" id="projectstab" onclick="ShowTab('projects')"> Projects </button>
 
-    <button class="tab" id="resumetab" onclick="ShowTab('resume')"> Resume </button>
+    <!-- <button class="tab" id="resumetab" onclick="ShowTab('resume')"> Resume </button> -->
     
     <span class="status-bar-field" id="time" style="width:6%;height:70%;"></span>
   </div>
@@ -43,11 +43,11 @@
     <div class="window-body">
       <div class="row" style="display:flex; flex-direction: row; align-items: flex-start;">
         <div class="column" style="padding: 20px; flex: 1; min-width: 0;">
-          <p>I am a senior at Darien High School and am 18 years old, in my free time I enjoy coding and making art! </br>
-            I'm planning to study Computer Science in college, and hope to work in Cybersecurity in the future. </br>
+          <p>I am a senior at Darien High School and am 18 years old. I enjoy coding and making art in my free time! </br>
+            I'm planning to study computer science in college, and hope to work in cybersecurity in the future. </br>
             <br>
             My current projects include a glove hand tracker, a drone, and this website! </br>
-            You can find more information about my past and current projects in the Projects Tab</p>
+            You can find more information about my past and current projects in the Projects Tab.</p>
             <!-- <button onclick="ShowTab('resume')">Resume</button> -->
         </div>
         <div class="column images" style="flex-shrink: 0; padding: 20px 20px 20px 0; max-width: 50%;">
@@ -84,6 +84,33 @@
     </div>
   </div>
 
+  <!-- <div class="window" id="resume">
+    <header>
+      <div class="title-bar" id="resumeheader">
+        <div class="title-bar-text">resume</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="ShowTab('resume')"></button>
+          <button aria-label="Maximize" onclick="Maximize('resume')"></button>
+          <button aria-label="Close" onclick="CloseTab('resume')"></button>
+        </div>
+      </div>
+    </header>
+    <div class="window-body">
+      <div class="row" style="display:flex; flex-direction: row; align-items: flex-start;">
+        <div class="column" style="padding: 20px; flex: 1; min-width: 0;">
+          <p>Hi there ! I'm Anoushka and this is my little site !!!</p>
+          <p>This whole site is based off of Windows 95 (if you couldn't tell already), and made using base css and js. I use some css from </p>
+          <p>You can use the shortcuts at the top of the screen to open up new tabs, just like a computer!</p>
+          <img src="images/stamp1.gif" style="padding-right: 1em;"> <img src="images/stamp3.png"> <br>
+          <img src="images/pixel1.gif" style= "padding-left: 2em;">
+        </div>
+        <div class="column images" style="flex-shrink: 0; padding: 20px 20px 20px 0; max-width: 50%;">
+          <img src="images/mefr.jpg" style="max-width: 100%; height: auto; display: block;" alt="meow">
+        </div>
+      </div>
+    </div>
+  </div> -->
+
   <div class="window" id="projects">
     <header>
       <div class="title-bar" id="projectsheader">
@@ -96,7 +123,12 @@
       </div>
     </header>
     <div class="window-body">
-      <p>erm lets try this again</p>
+      <p>Glove Hand Controller: <br>
+      Creating a glove which can track hand movements and manipulate a digital 3D model using arduinos and C++</p>
+      <p>Automatic Plant Watering System:</p>
+      <p>Analyzing Walkability using Wolfram Mathmatica and OSM Data</p>
+      <p>Analyzing Peg Solitare Game States using Wolfram Mathmatica and Multiway Graphs</p>
+      <p>Dronxe:</p>
     </div>
   </div>
 
