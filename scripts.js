@@ -79,15 +79,18 @@ initializeAllWindows();
 var aboutWindow = document.getElementById("about");
 var welcomeWindow = document.getElementById("welcome");
 var projectsWindow = document.getElementById("projects");
+var projectsWindow = document.getElementById("resume");
 
 dragElement(aboutWindow);
 dragElement(welcomeWindow);
 dragElement(projectsWindow);
+dragElement(resumeWindow);
 
 
 resizeElement(welcomeWindow);
 resizeElement(aboutWindow);
 resizeElement(projectsWindow);
+resizeElement(resumeWindow);
 
 function dragElement(tab) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
