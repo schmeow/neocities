@@ -79,7 +79,7 @@ initializeAllWindows();
 var aboutWindow = document.getElementById("about");
 var welcomeWindow = document.getElementById("welcome");
 var projectsWindow = document.getElementById("projects");
-var projectsWindow = document.getElementById("resume");
+var resumeWindow = document.getElementById("resume");
 
 dragElement(aboutWindow);
 dragElement(welcomeWindow);

@@ -43,11 +43,15 @@
     <div class="window-body">
       <div class="row" style="display:flex; flex-direction: row; align-items: flex-start;">
         <div class="column" style="padding: 20px; flex: 1; min-width: 0;">
-          <p>blehhh talk about myself here i love coding i love coding i love coding</p>
-            <button onclick="ShowTab('resume')">Resume</button>
+          <p>I am a senior at Darien High School and am 18 years old. I enjoy coding and making art in my free time! </br>
+            I'm planning to study computer science in college, and hope to work in cybersecurity in the future. </br>
+            <br>
+            My current projects include a glove hand tracker, a drone, and this website! </br>
+            You can find more information about my past and current projects in the Projects Tab.</p>
+            <button onclick="ShowTab('resume')" style="padding: 2%;"> <b>Resume</b></button>
         </div>
         <div class="column images" style="flex-shrink: 0; padding: 20px 20px 20px 0; max-width: 50%;">
-          <img src="images/pfp.jpeg" style="max-width: 100%; height: auto; display: block;" alt="meow">
+          <img src="images/mehead.jpg" style="max-width: 100%; height: auto; display: block;" alt="meow">
         </div>
       </div>
     </div>
@@ -83,7 +87,7 @@
   <div class="window" id="resume">
     <header>
       <div class="title-bar" id="resumeheader">
-        <div class="title-bar-text">resume</div>
+        <div class="title-bar-text">Resume</div>
         <div class="title-bar-controls">
           <button aria-label="Minimize" onclick="ShowTab('resume')"></button>
           <button aria-label="Maximize" onclick="Maximize('resume')"></button>
@@ -91,17 +95,8 @@
         </div>
       </div>
     </header>
-    <div class="window-body">
-      <div class="row" style="display:flex; flex-direction: row; align-items: flex-start;">
-        <div class="column" style="padding: 20px; flex: 1; min-width: 0;">
-          <p>resume here</p>
-          <img src="images/stamp1.gif" style="padding-right: 1em;"> <img src="images/stamp3.png"> <br>
-          <img src="images/pixel1.gif" style= "padding-left: 2em;">
-        </div>
-        <div class="column images" style="flex-shrink: 0; padding: 20px 20px 20px 0; max-width: 50%;">
-          <img src="images/mefr.jpg" style="max-width: 100%; height: auto; display: block;" alt="meow">
-        </div>
-      </div>
+    <div class="window-body" style="padding-right: 5%;">
+      <iframe src="https://docs.google.com/gview?url=https://files.catbox.moe/o3qij8.pdf&embedded=true" style="width:100%; height:700px" frameborder="0"></iframe>
     </div>
   </div>
 
@@ -117,30 +112,18 @@
       </div>
     </header>
     <div class="window-body">
-      <p>Glove Hand Controller: <br>
-      Creating a glove which can track hand movements and manipulate a digital 3D model using arduinos and C++</p>
-      <p>Automatic Plant Watering System:</p>
-      <p>Analyzing Walkability using Wolfram Mathmatica and OSM Data</p>
-      <p>Analyzing Peg Solitare Game States using Wolfram Mathmatica and Multiway Graphs</p>
-      <p>Dronxe:</p>
+      <p> <b>Glove Hand Controller:</b> <br>
+      I'm currently working on creating a glove which can track hand movements and manipulate a digital 3D model using arduinos and C++.</p>
+      <p><b>Automatic Plant Watering System:</b>
+      I created a arduino powered system that automatically waters plants by testing the water level of the soil, and sprinkles water when needed based on the plant type.</p>
+      <p><b>Analyzing Peg Solitare Game States using Wolfram Mathmatica and Multiway Graphs:</b>
+        During the Wolfram Summer Research Program in 2023, I did research on Peg Solitare, a single player game about pegs. I analyzed different board states and come up with algorithms to generate movesets. </p>
+      <p><b>Analyzing Walkability using Wolfram Mathmatica and OSM Data:</b>
+      During the Wolfram Emerging Leaders Program in 2023/2024, I worked with two other students to create a program that could analyze walkability in a given area. We created our own walkability model, and tested it on many different cities and towns.</p>
+      <p><b>Drone:</b>
+      This year, along with my Aerospace Club, I'm building a Drone.</p>
     </div>
   </div>
-
-  <!-- <div class="window hide" id="resume">
-    <header>
-      <div class="title-bar" id="resumeheader">
-        <div class="title-bar-text">Resume</div>
-        <div class="title-bar-controls">
-          <button aria-label="Minimize" onclick="ShowTab('resume')"></button>
-          <button aria-label="Maximize" onclick="Maximize('resume')"></button>
-          <button aria-label="Close" onclick="CloseTab('resume')"></button>
-        </div>
-      </div>
-    </header>
-    <div class="window-body">
-      <p>blehhhhh</p>
-    </div>
-  </div> -->
 
 
   <script src="scripts.js"> </script>

@@ -150,6 +150,19 @@ body {
   display: none;
 }
 
+.notepad-body{
+  background-color: whitesmoke;
+  min-height: 100%;
+  padding-left: 1%;
+  padding-top: 1px;
+  margin-top: 0px;
+  border-width: 10px;
+  border-top: 2px solid rgb(83, 83, 83);
+  border-left: 2px solid rgb(83, 83, 83);
+  border-bottom: 2px solid lightgrey;
+  border-right: 2px solid lightgrey;
+}
+
 .title-bar {
   background: var(--dialog-blue);
   padding: 0.1875em 0.125em 0.1875em 0.1875em;
