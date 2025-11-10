@@ -49,10 +49,10 @@
             My current projects include a glove hand tracker, a drone, and this website! </br>
             You can find more information about my past and current projects in the Projects Tab.</p>
             <div style="display: flex; align-items: center; gap: 10px;">
-              <button onclick="ShowTab('resume')" style="padding: 8px 12px;"><b>Resume</b></button>
+              <button onclick="OpenTab('resume')" style="padding: 8px 12px;"><b>Resume</b></button>
               <a href="https://www.linkedin.com/in/anoushka-muchhal-46033734a/" target="_blank"><img src="images/linkedin.png" style="width: 25px; height: auto; margin: 0;"></a>
               <a href="https://github.com/schmeow" target="_blank"><img src="images/github.png" style="width: 25px; height: auto;"></a>
-          </div>
+            </div>
         </div>
         <div class="column images" style="flex-shrink: 0; padding: 20px 20px 20px 0; max-width: 50%;">
           <img src="images/mehead.jpg" style="max-width: 100%; height: auto; display: block;" alt="meow">
@@ -115,15 +115,47 @@
         </div>
       </div>
     </header>
-    <div class="window-body">
-       <button onclick="SwitchContent()" style="padding: 8px 12px;"><b>Resume</b></button>
+    <div class="window-body" id="projectsparent">
+      <div id="projects-main">
+        <p><b>Current Projects</b></p>
+        <button onclick="SwitchContent('main', 'controller')" style="padding:2%">Glove Hand Controller</button>
+        <button onclick="SwitchContent('main', 'drone')" style="padding:2%">Drone</button>
+        <button onclick="SwitchContent('main', 'website')" style="padding:2%">This Site</button>
 
-      <div id="content1">First content</div>
-      <div id="content2" class="hide">Second content</div>
+        <p><b>Past Projects</b></p>
+        <button onclick="SwitchContent('main', 'wsrp')" style="padding:2%">Analyzing Peg Solitare Using Multiway Graphs</button>
+        <button onclick="SwitchContent('main', 'welp')" style="padding:2%">Calculating Walkability</button>
+      </div>
+
+      <div id="projects-controller" class="hide">Controller <br>
+        <button onclick="SwitchContent('controller', 'main')" style="padding:2%">Back</button>
+      </div>
+
+      <div id="projects-drone" class="hide">Drone <br>
+        <button onclick="SwitchContent('drone', 'main')" style="padding:2%">Back</button>
+      </div>
+
+      <div id="projects-website" class="hide">Website <br>
+        <button onclick="SwitchContent('website', 'main')" style="padding:2%">Back</button>
+      </div>
+
+      <div id="projects-wsrp" class="hide">wsrp <br>
+        <button onclick="SwitchContent('wsrp', 'main')" style="padding:2%">Back</button>
+      </div>
+
+      <div id="projects-welp" class="hide">welp <br>
+        <button onclick="SwitchContent('welp', 'main')" style="padding:2%">Back</button>
+      </div>
+
     </div>
   </div>
 
 
-  <script src="scripts.js"> </script>
+
+
+
+
+
+  <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,15 +1,9 @@
-CloseTab('about')
-CloseTab('projects')
-CloseTab('resume')
+CloseTab('about');
+CloseTab('projects');
+CloseTab('resume');
 
 var windowZIndexBase = 10; 
 var windowZIndexCounter = 10;
-
-function SwitchContent(bleh) {
-  console.log(bleh);
-  document.getElementById("content1").classList.toggle("hide");
-  document.getElementById("content2").classList.toggle("hide");
-}
 
 function updateDateTime() {
   const now = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
@@ -396,4 +390,13 @@ function Maximize(id) {
 
     bringWindowToFront(element);
   }
+}
+
+function SwitchContent(s, e) {
+  start = document.getElementById("projects-" + s)
+  end = document.getElementById("projects-" + e)
+
+  start.classList.toggle("hide");
+  end.classList.toggle("hide");
+
 }
