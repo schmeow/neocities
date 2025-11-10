@@ -561,13 +561,13 @@ input[type="reset"]:focus {
   }
 
   .window-body .row {
-    flex-direction: column !important;
-    margin: 0 !important;
+    flex-direction: column;
+    margin: 0;
   }
 
   .window-body .column {
-    width: 100% !important;
-    padding: 10px !important;
+    width: 100%;
+    padding: 10px;
     box-sizing: border-box;
   }
 

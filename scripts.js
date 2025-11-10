@@ -5,6 +5,12 @@ CloseTab('resume')
 var windowZIndexBase = 10; 
 var windowZIndexCounter = 10;
 
+function SwitchContent(bleh) {
+  console.log(bleh);
+  document.getElementById("content1").classList.toggle("hide");
+  document.getElementById("content2").classList.toggle("hide");
+}
+
 function updateDateTime() {
   const now = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
   document.querySelector('#time').textContent = now;
@@ -195,6 +201,21 @@ function dragElement(tab) {
 
 
 function ShowTab(id) {
+  var element = document.getElementById(id); 
+  if (element.classList.contains('hide')) {
+    element.classList.remove('hide');
+    initializeWindowZIndex(element);
+    bringWindowToFront(element);
+    var existingHandle = element.querySelector('.window-resize-handle');
+    if (!existingHandle) {
+      resizeElement(element);
+    }
+  } else {
+    element.classList.add('hide');
+  }
+}
+
+function Show(id) {
   var element = document.getElementById(id); 
   if (element.classList.contains('hide')) {
     element.classList.remove('hide');
