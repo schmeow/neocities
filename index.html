@@ -40,26 +40,38 @@
         </div>
       </div>
     </header>
-    <div class="window-body">
-      <div class="row" style="display:flex; flex-direction: row; align-items: flex-start;">
-        <div class="column" style="padding: 20px; flex: 1; min-width: 0;">
-          <p>I am a senior at Darien High School and am 18 years old. I enjoy coding and making art in my free time! </br>
-            I'm planning to study computer science in college, and hope to work in cybersecurity in the future. </br>
-            <br>
-            My current projects include a glove hand tracker, a drone, and this website! </br>
-            You can find more information about my past and current projects in the Projects Tab.</p>
+    <div class="window-body" style="margin-top: 0px; padding-top: 0px;">
+      <div class="menu-bar">
+        <span class="menu-item"><u>F</u>ile</span>
+        <span class="menu-item"><u>E</u>dit</span>
+        <span class="menu-item"><u>S</u>earch</span>
+        <span class="menu-item"><u>H</u>elp</span>
+      </div>
+      <div class="content-area">
+        <div class="row" style="padding:0 1% 0 1%; display:flex; flex-direction: row; align-items: flex-start;">
+          <div class="column" style="padding:0 1% 0 1%; flex: 1; min-width: 0;">
+            <p>I am a senior at Darien High School and am 18 years old. I enjoy coding and making art in my free time! <br>
+              I'm planning to study computer science in college, and hope to work in cybersecurity in the future. <br><br>
+              My current projects include a glove hand tracker, a drone, and this website! <br>
+              You can find more information about my past and current projects in the Projects Tab.
+            </p>
             <div style="display: flex; align-items: center; gap: 10px;">
               <button onclick="OpenTab('resume')" style="padding: 8px 12px;"><b>Resume</b></button>
-              <a href="https://www.linkedin.com/in/anoushka-muchhal-46033734a/" target="_blank"><img src="images/linkedin.png" style="width: 25px; height: auto; margin: 0;"></a>
-              <a href="https://github.com/schmeow" target="_blank"><img src="images/github.png" style="width: 25px; height: auto;"></a>
+              <a href="https://www.linkedin.com/in/anoushka-muchhal-46033734a/" target="_blank">
+                <img src="images/linkedin.png" style="width: 25px; height: auto; margin: 0;">
+              </a>
+              <a href="https://github.com/schmeow" target="_blank">
+                <img src="images/github.png" style="width: 25px; height: auto;">
+              </a>
             </div>
-        </div>
-        <div class="column images" style="flex-shrink: 0; padding: 20px 20px 20px 0; max-width: 50%;">
-          <img src="images/mehead.jpg" style="max-width: 100%; height: auto; display: block;" alt="meow">
-        </div>
+          </div>
+          <div class="column images" style="flex-shrink: 0; padding:2%; max-width: 50%;">
+            <img src="images/mehead.jpg" style="max-width: 100%; height: auto; display: block;" alt="meow">
+          </div>
       </div>
     </div>
   </div>
+</div>
 
   <div class="window" id="welcome">
     <header>
@@ -99,7 +111,7 @@
         </div>
       </div>
     </header>
-    <div class="window-body" style="padding-right: 5%;">
+    <div class="window-body" style="padding: 0%">
       <img src="images/Resume.png">
     </div>
   </div>
@@ -115,36 +127,53 @@
         </div>
       </div>
     </header>
-    <div class="window-body" id="projectsparent">
-      <div id="projects-main">
+    <div class="window-body" id="projectsparent" style="margin-top:0; padding-top:0;">
+      <div class="menu-bar">
+        <span class="menu-item"><u>F</u>ile</span>
+        <span class="menu-item"><u>E</u>dit</span>
+        <span class="menu-item"><u>S</u>earch</span>
+        <span class="menu-item"><u>H</u>elp</span>
+      </div>
+      <div class="content-area" id="projects-main" style="padding:5px 10px 26% 10px;">
         <p><b>Current Projects</b></p>
-        <button onclick="SwitchContent('main', 'controller')" style="padding:2%">Glove Hand Controller</button>
-        <button onclick="SwitchContent('main', 'drone')" style="padding:2%">Drone</button>
-        <button onclick="SwitchContent('main', 'website')" style="padding:2%">This Site</button>
+        <button onclick="SwitchContent('main', 'controller')" class="projbutton">Glove Controller</button>
+        <button onclick="SwitchContent('main', 'drone')" class="projbutton">Drone</button>
+        <button onclick="SwitchContent('main', 'website')" class="projbutton">This Site</button>
 
         <p><b>Past Projects</b></p>
-        <button onclick="SwitchContent('main', 'wsrp')" style="padding:2%">Analyzing Peg Solitare Using Multiway Graphs</button>
-        <button onclick="SwitchContent('main', 'welp')" style="padding:2%">Calculating Walkability</button>
+        <button onclick="SwitchContent('main', 'wsrp')" class="projbutton">Analyzing Peg Solitare Using Multiway Graphs</button>
+        <button onclick="SwitchContent('main', 'welp')" class="projbutton">Calculating Walkability</button>
       </div>
 
-      <div id="projects-controller" class="hide">Controller <br>
-        <button onclick="SwitchContent('controller', 'main')" style="padding:2%">Back</button>
+      <div id="projects-controller" class="content-area hide" style="padding:5px 10px 14% 10px;">
+        <p><b>Glove Controller</b> <br> <br>
+        Since the start of the school year, I've been working to create a fully internal glove controller. A glove controller is a type of controller often used for vr which measures hand and finger positions to control something digitally. Usually, they are made with external cameras and setup, but I wanted to create something fully internal using arduinos. <br> <br>
+        So far, I've been able to set up a gyroscope and arduino to read hand rotation and report it back to my computer. I'm currently working on creating a visualization of this input using OpenGL, and I plan to incorporate finger data in the future.</p>
+
+        <button onclick="SwitchContent('controller', 'main')" class="projbutton backbutton">Back</button>
       </div>
 
-      <div id="projects-drone" class="hide">Drone <br>
-        <button onclick="SwitchContent('drone', 'main')" style="padding:2%">Back</button>
+      <div id="projects-drone" class="content-area hide"  style="padding:5px 10px 23% 10px;">
+        <p> <b>Drone</b> <br> <br>
+        This year, our Aerospace Club has decided to build a drone! As one of the Presidents of the club, I've taken a role as the head of Electronics, working to plan out which motors, escs, arduinos, and other components we will need. <br> <br>
+        By the end of the year, we plan to having a fully functioning drone with a camera and a claw like grabbing mechanism at the bottom. </p>
+
+        <button onclick="SwitchContent('drone', 'main')" class="projbutton backbutton" style="top: 60%">Back</button>
       </div>
 
-      <div id="projects-website" class="hide">Website <br>
-        <button onclick="SwitchContent('website', 'main')" style="padding:2%">Back</button>
+      <div id="projects-website" class="content-area hide" style="padding:5px 10px 17% 10px;">
+        <p> <b>Website</b> <br> <br>
+        This site has taken me a while to build fully, as I've been learning css, html, and js in the course of building it and therefore redid it many times before finally getting here. When I first built the site, I just wanted it to be a personal page, but I realized I could use it for more as well, as it really shows my personality and what I enjoy making. <br> <br>
+        This isn't the final form of this website, I plan to add a gallery for my art, a music player to show off my favorite songs, and a 'terminal' type interface for a small journal to put some thoughts.</p>
+        <button onclick="SwitchContent('website', 'main')" class="projbutton backbutton" style="top:65%">Back</button>
       </div>
 
-      <div id="projects-wsrp" class="hide">wsrp <br>
-        <button onclick="SwitchContent('wsrp', 'main')" style="padding:2%">Back</button>
+      <div id="projects-wsrp" class=" content-area hide" style="padding:5px 10px 23% 10px;"><b>Analyzing Peg Solitare Using Multiway Graphs</b> <br> <br>
+        <button onclick="SwitchContent('wsrp', 'main')" class="projbutton backbutton">Back</button>
       </div>
 
-      <div id="projects-welp" class="hide">welp <br>
-        <button onclick="SwitchContent('welp', 'main')" style="padding:2%">Back</button>
+      <div id="projects-welp" class="content-area hide" style="padding:5px 10px 23% 10px;"> <b>Calculating Walkability</b> <br>
+        <button onclick="SwitchContent('welp', 'main')" class="projbutton backbutton">Back</button>
       </div>
 
     </div>

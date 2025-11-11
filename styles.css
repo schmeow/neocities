@@ -110,6 +110,7 @@ body {
   box-sizing: border-box;
   overflow: auto;
   max-height: calc(100% - 50px);
+  margin-left: 0;
 }
 
 .window-body p {
@@ -716,7 +717,6 @@ input[type="reset"]:focus {
   }
 
   .window-body p {
-    font-size: 12px;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -726,12 +726,42 @@ input[type="reset"]:focus {
   }
 }
 
+.menu-bar {
+  background-color: #c0c0c0; /* light gray, similar to the notepad menu */
+  color: black;
+  font-family: "Pixelated MS Sans Serif", Arial, monospace;
+  font-size: 14px;
+  padding-left: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  user-select: none;
+  display: flex;
+  gap: 20px; /* spacing between menu items */
+  border-bottom: 2px solid #808080; /* subtle border like original */
+}
+
+.menu-item {
+  cursor: default;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.content-area {
+  background-color: white;
+  padding-top: 0;
+  margin-top: 0;
+  border: 2px solid #808080; /* gray border similar to Windows 95 style */
+  height: calc(100% - 30px); /* fill window-body remaining height */
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+
 @media screen and (max-width:480px) {  
   .images {
     display: none;
   }
 }
-
 ::-webkit-scrollbar {
   width: 16px;
 }
@@ -775,3 +805,21 @@ input[type="reset"]:focus {
   width: 16px;
   background-image: svg-load("./icon/button-right.svg");
 }
+
+.projbutton {
+  padding: 5px 10px;
+  margin: 0px 10px;
+  font-family: "Pixelated MS Sans Serif";
+  font-weight: normal;
+  font-size: medium;
+}
+
+.backbutton {
+  margin: 0;
+  margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
