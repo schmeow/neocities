@@ -71,7 +71,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #008080;
+    background-image: url("images/wallpaper.jpg");
     font-family: "Pixelated MS Sans Serif", Arial;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -448,7 +448,6 @@ input[type="reset"]:disabled,
   background: none;
   outline: none;
   box-shadow: none;
-
 }
 
 

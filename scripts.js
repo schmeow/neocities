@@ -1,6 +1,7 @@
 CloseTab('about');
 CloseTab('projects');
 CloseTab('resume');
+CloseTab('gallery');
 
 var windowZIndexBase = 10; 
 var windowZIndexCounter = 10;
@@ -80,17 +81,21 @@ var aboutWindow = document.getElementById("about");
 var welcomeWindow = document.getElementById("welcome");
 var projectsWindow = document.getElementById("projects");
 var resumeWindow = document.getElementById("resume");
+var galleryWindow = document.getElementById("gallery");
+
 
 dragElement(aboutWindow);
 dragElement(welcomeWindow);
 dragElement(projectsWindow);
 dragElement(resumeWindow);
+dragElement(galleryWindow);
 
 
 resizeElement(welcomeWindow);
 resizeElement(aboutWindow);
 resizeElement(projectsWindow);
 resizeElement(resumeWindow);
+resizeElement(galleryWindow);
 
 function dragElement(tab) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

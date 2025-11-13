@@ -8,7 +8,7 @@
 </head>
 
 <body class="bigmax">
-  <div class="menu">
+  <div class="menu" style="border-top: 2px solid rgb(235, 235, 235)">
     <button id="start"> <img src="images/start.jpeg" style="width:50%;height:80%;" >Start</button>
     
     <button class="tab" id="welcometab" onclick="ShowTab('welcome')"> Welcome </button>
@@ -24,9 +24,9 @@
 
   <div class="shortcuts-container"> 
     <button class="shortcut" id="sc-about" onclick="OpenTab('welcome')"><div #test><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Welcome</span></button>
-
     <button class="shortcut" id="sc-about" onclick="OpenTab('about')" style="margin-left: 18px;"><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"> <br><span>About</span></button>
     <button class="shortcut" id="sc-about" onclick="OpenTab('projects')"><div #test><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Projects</span></button>
+    <button class="shortcut" id="sc-about" onclick="OpenTab('gallery')"><div #test><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Gallery</span></button>
   </div>
 
   <div class="window" id="about">
@@ -176,6 +176,22 @@
         <button onclick="SwitchContent('welp', 'main')" class="projbutton backbutton">Back</button>
       </div>
 
+    </div>
+  </div>
+
+  <div class="window" id="gallery">
+    <header>
+      <div class="title-bar" id="galleryheader">
+        <div class="title-bar-text">Gallery</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="ShowTab('gallery')"></button>
+          <button aria-label="Maximize" onclick="Maximize('gallery')"></button>
+          <button aria-label="Close" onclick="CloseTab('gallery')"></button>
+        </div>
+      </div>
+    </header>
+    <div class="window-body" style="padding: 0%">
+      hi
     </div>
   </div>
 
