@@ -18,18 +18,20 @@
     <button class="tab" id="projectstab" onclick="ShowTab('projects')"> Projects </button>
 
     <button class="tab" id="resumetab" onclick="ShowTab('resume')"> Resume </button>
+
+    <button class="tab" id="gallerytab" onclick="ShowTab('gallery')"> Gallery </button>
     
     <span class="status-bar-field" id="time" style="width:6%;height:70%;"></span>
   </div>
 
   <div class="shortcuts-container"> 
-    <button class="shortcut" id="sc-about" onclick="OpenTab('welcome')"><div #test><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Welcome</span></button>
+    <button class="shortcut" id="sc-about" onclick="OpenTab('welcome')"><div #test><img src="images/welcome.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Welcome</span></button>
     <button class="shortcut" id="sc-about" onclick="OpenTab('about')" style="margin-left: 18px;"><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"> <br><span>About</span></button>
-    <button class="shortcut" id="sc-about" onclick="OpenTab('projects')"><div #test><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Projects</span></button>
-    <button class="shortcut" id="sc-about" onclick="OpenTab('gallery')"><div #test><img src="images/about.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Gallery</span></button>
+    <button class="shortcut" id="sc-about" onclick="OpenTab('projects')"><div #test><img src="images/projects.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Projects</span></button>
+    <button class="shortcut" id="sc-about" onclick="OpenTab('gallery')"><div #test><img src="images/gallery.png" style="height: 40px; width: 40px; margin-bottom: 5px;"></div> <br><span>Gallery</span></button>
   </div>
 
-  <div class="window" id="about">
+  <div class="window" id="about" style="height: max-content">
     <header>
       <div class="title-bar" id="aboutheader">
         <div class="title-bar-text">About</div>
@@ -70,10 +72,10 @@
           </div>
       </div>
     </div>
+    </div>
   </div>
-</div>
 
-  <div class="window" id="welcome">
+  <div class="window" id="welcome" style="height: max-content">
     <header>
       <div class="title-bar" id="welcomeheader">
         <div class="title-bar-text">Welcome</div>
@@ -86,7 +88,7 @@
     </header>
     <div class="window-body">
       <div class="row" style="display:flex; flex-direction: row; align-items: flex-start;">
-        <div class="column" style="padding: 20px; flex: 1; min-width: 0;">
+        <div class="column" style="padding: 0px 10px 0px 10px; flex: 1; min-width: 0;">
           <p>Hi there ! I'm Anoushka and this is my little site !!!</p>
           <p>This whole site is based off of Windows 95 (if you couldn't tell already), and made using base css and js. I use some css from <a href="https://github.com/jdan/98.css" target=_blank>98.CSS</a> </p>
           <p>You can use the shortcuts at the top of the screen to open up new tabs, just like a computer!</p>
@@ -100,7 +102,7 @@
     </div>
   </div>
 
-  <div class="window" id="resume">
+  <div class="window" id="resume" style="height: max-content">
     <header>
       <div class="title-bar" id="resumeheader">
         <div class="title-bar-text">Resume</div>
@@ -116,7 +118,7 @@
     </div>
   </div>
 
-  <div class="window" id="projects">
+  <div class="window" id="projects" style="height: max-content">
     <header>
       <div class="title-bar" id="projectsheader">
         <div class="title-bar-text">Projects</div>
@@ -136,13 +138,13 @@
       </div>
       <div class="content-area" id="projects-main" style="padding:5px 10px 26% 10px;">
         <p><b>Current Projects</b></p>
-        <button onclick="SwitchContent('main', 'controller')" class="projbutton">Glove Controller</button>
-        <button onclick="SwitchContent('main', 'drone')" class="projbutton">Drone</button>
-        <button onclick="SwitchContent('main', 'website')" class="projbutton">This Site</button>
+        <button onclick="SwitchContentProj('main', 'controller')" class="projbutton">Glove Controller</button>
+        <button onclick="SwitchContentProj('main', 'drone')" class="projbutton">Drone</button>
+        <button onclick="SwitchContentProj('main', 'website')" class="projbutton">This Site</button>
 
         <p><b>Past Projects</b></p>
-        <button onclick="SwitchContent('main', 'wsrp')" class="projbutton">Analyzing Peg Solitare Using Multiway Graphs</button>
-        <button onclick="SwitchContent('main', 'welp')" class="projbutton">Calculating Walkability</button>
+        <button onclick="SwitchContentProj('main', 'wsrp')" class="projbutton">Analyzing Peg Solitare Using Multiway Graphs</button>
+        <button onclick="SwitchContentProj('main', 'welp')" class="projbutton">Calculating Walkability</button>
       </div>
 
       <div id="projects-controller" class="content-area hide" style="padding:5px 10px 14% 10px;">
@@ -150,7 +152,7 @@
         Since the start of the school year, I've been working to create a fully internal glove controller. A glove controller is a type of controller often used for vr which measures hand and finger positions to control something digitally. Usually, they are made with external cameras and setup, but I wanted to create something fully internal using arduinos. <br> <br>
         So far, I've been able to set up a gyroscope and arduino to read hand rotation and report it back to my computer. I'm currently working on creating a visualization of this input using OpenGL, and I plan to incorporate finger data in the future.</p>
 
-        <button onclick="SwitchContent('controller', 'main')" class="projbutton backbutton">Back</button>
+        <button onclick="SwitchContentProj('controller', 'main')" class="projbutton backbutton">Back</button>
       </div>
 
       <div id="projects-drone" class="content-area hide"  style="padding:5px 10px 23% 10px;">
@@ -158,28 +160,28 @@
         This year, our Aerospace Club has decided to build a drone! As one of the Presidents of the club, I've taken a role as the head of Electronics, working to plan out which motors, escs, arduinos, and other components we will need. <br> <br>
         By the end of the year, we plan to having a fully functioning drone with a camera and a claw like grabbing mechanism at the bottom. </p>
 
-        <button onclick="SwitchContent('drone', 'main')" class="projbutton backbutton" style="top: 60%">Back</button>
+        <button onclick="SwitchContentProj('drone', 'main')" class="projbutton backbutton" style="top: 60%">Back</button>
       </div>
 
       <div id="projects-website" class="content-area hide" style="padding:5px 10px 17% 10px;">
         <p> <b>Website</b> <br> <br>
         This site has taken me a while to build fully, as I've been learning css, html, and js in the course of building it and therefore redid it many times before finally getting here. When I first built the site, I just wanted it to be a personal page, but I realized I could use it for more as well, as it really shows my personality and what I enjoy making. <br> <br>
         This isn't the final form of this website, I plan to add a gallery for my art, a music player to show off my favorite songs, and a 'terminal' type interface for a small journal to put some thoughts.</p>
-        <button onclick="SwitchContent('website', 'main')" class="projbutton backbutton" style="top:65%">Back</button>
+        <button onclick="SwitchContentProj('website', 'main')" class="projbutton backbutton" style="top:65%">Back</button>
       </div>
 
       <div id="projects-wsrp" class=" content-area hide" style="padding:5px 10px 23% 10px;"><b>Analyzing Peg Solitare Using Multiway Graphs</b> <br> <br>
-        <button onclick="SwitchContent('wsrp', 'main')" class="projbutton backbutton">Back</button>
+        <button onclick="SwitchContentProj('wsrp', 'main')" class="projbutton backbutton">Back</button>
       </div>
 
       <div id="projects-welp" class="content-area hide" style="padding:5px 10px 23% 10px;"> <b>Calculating Walkability</b> <br>
-        <button onclick="SwitchContent('welp', 'main')" class="projbutton backbutton">Back</button>
+        <button onclick="SwitchContentProj('welp', 'main')" class="projbutton backbutton">Back</button>
       </div>
 
     </div>
   </div>
 
-  <div class="window" id="gallery">
+  <div class="window" id="gallery" style="width: 800px; height: max-content;">
     <header>
       <div class="title-bar" id="galleryheader">
         <div class="title-bar-text">Gallery</div>
@@ -190,8 +192,23 @@
         </div>
       </div>
     </header>
-    <div class="window-body" style="padding: 0%">
-      hi
+    <div class="window-body" style="margin-top: 0px; padding-top: 0px;">
+      <div class="menu-bar">
+        <span class="menu-item"><u>F</u>ile</span>
+        <span class="menu-item"><u>E</u>dit</span>
+        <span class="menu-item"><u>S</u>earch</span>
+        <span class="menu-item"><u>H</u>elp</span>
+      </div>
+      <div class="content-area">
+        <div class="row" style="display:flex; flex-direction: row; align-items: flex-start;">
+        <div class="column" style="padding: 20px; flex: 1; width: 300px; height: max;">
+          <button class="gal-button"><img src="images/mefr.jpg" alt="meow"></button>
+        </div>
+        <div class="column" style="flex-shrink: 0; padding: 20px 20px 20px 0; min-width: 200px;">
+          <img src="images/mefr.jpg" style="max-width: 100%; height: auto; display: block;" alt="meow">
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 

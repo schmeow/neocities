@@ -91,8 +91,6 @@ body {
   height: 400px;
   min-width: 300px;
   min-height: 200px;
-  max-width: calc(100vw - 1.25em);
-  max-height: calc(100vh - 3.75em);
   overflow: hidden;
   z-index: 10;
   box-sizing: border-box;
@@ -822,3 +820,9 @@ input[type="reset"]:focus {
   transform: translate(-50%, -50%);
 }
 
+.gal-button {
+  outline: none !important;
+  background: none !important;
+  background-color: none !important;
+  box-shadow: none !important;
+}

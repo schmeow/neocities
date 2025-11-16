@@ -397,7 +397,7 @@ function Maximize(id) {
   }
 }
 
-function SwitchContent(s, e) {
+function SwitchContentProj(s, e) {
   start = document.getElementById("projects-" + s)
   end = document.getElementById("projects-" + e)
 
