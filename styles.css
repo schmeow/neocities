@@ -825,4 +825,6 @@ input[type="reset"]:focus {
   background: none !important;
   background-color: none !important;
   box-shadow: none !important;
+  width: 150px !important;
+  height: 150px !important;
 }

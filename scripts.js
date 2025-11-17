@@ -403,5 +403,12 @@ function SwitchContentProj(s, e) {
 
   start.classList.toggle("hide");
   end.classList.toggle("hide");
+}
 
+function SwitchContentGallery(s, e) {
+  start = document.getElementById("projects-" + s)
+  end = document.getElementById("projects-" + e)
+
+  start.classList.toggle("hide");
+  end.classList.toggle("hide");
 }
