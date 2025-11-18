@@ -825,6 +825,12 @@ input[type="reset"]:focus {
   background: none !important;
   background-color: none !important;
   box-shadow: none !important;
+}
+.gal-button img {
   width: 150px !important;
   height: 150px !important;
+}
+.gal-image {
+  max-width: 300px;
+  object-fit: cover;
 }

@@ -405,10 +405,16 @@ function SwitchContentProj(s, e) {
   end.classList.toggle("hide");
 }
 
-function SwitchContentGallery(s, e) {
-  start = document.getElementById("projects-" + s)
-  end = document.getElementById("projects-" + e)
+function SwitchContentGallery(s) {
 
-  start.classList.toggle("hide");
-  end.classList.toggle("hide");
+  var allImages = document.getElementsByClassName('gal-image');
+  
+  for (var i = 0; i < allImages.length; i++) {
+    var image = allImages[i];
+    if (!image.classList.contains('hide')) {
+      image.classList.toggle("hide");
+    }
+  }
+  show = document.getElementById("gal-" + s)
+  show.classList.toggle("hide");
 }

@@ -204,16 +204,23 @@
       <div class="content-area">
         <div class="row" style="display:flex; flex-direction: row; align-items: flex-start;">
         <div class="column" style="padding: 20px; flex: 1; width: 300px; height: max;">
-          <button class="gal-button" id="gal-computers"><img src="images/art/computers.jpg"></button>
-          <button class="gal-button" id="gal-charcoal"><img src="images/art/charcoal.jpg"></button>
-          <button class="gal-button" id="gal-circuits"><img src="images/art/circuit.jpg"></button>
-          <button class="gal-button" id="gal-collage"><img src="images/art/collage.jpg"></button>
-          <button class="gal-button" id="gal-camera"><img src="images/art/camera.jpg"></button>
-          <button class="gal-button" id="gal-deer"><img src="images/art/deer.jpg"></button>
-          <button class="gal-button" id="gal-face"><img src="images/art/face.jpg"></button>
+          <button class="gal-button" id="gal-computers" onclick="SwitchContentGallery('comp')"><img src="images/art/computers.jpg"></button>
+          <button class="gal-button" id="gal-charcoal" onclick="SwitchContentGallery('char')"><img src="images/art/charcoal.jpg"></button>
+          <button class="gal-button" id="gal-circuits" onclick="SwitchContentGallery('circ')"><img src="images/art/circuit.jpg"></button>
+          <button class="gal-button" id="gal-collage" onclick="SwitchContentGallery('coll')"><img src="images/art/collage.jpg"></button>
+          <button class="gal-button" id="gal-camera" onclick="SwitchContentGallery('cam')"><img src="images/art/camera.jpg"></button>
+          <button class="gal-button" id="gal-deer" onclick="SwitchContentGallery('de')"><img src="images/art/deer.jpg"></button>
+          <button class="gal-button" id="gal-face" onclick="SwitchContentGallery('fa')"><img src="images/art/face.jpg"></button>
         </div>
         <div class="column" style="flex-shrink: 0; padding: 20px 20px 20px 0; min-width: 200px;">
-          <img src="images/mefr.jpg" style="max-width: 100%; height: auto; display: block;" alt="meow">
+          <div id="gal-main" class="gal-image"><img src="images/mefr.jpg" style="max-width: 100%; height: auto; display: block;" alt="meow"></div>
+          <div id="gal-comp" class="gal-image hide"><img src="images/art/computers.jpg"></div>
+          <div id="gal-char" class="gal-image hide"><img src="images/art/charcoal.jpg"></div>
+          <div id="gal-circ" class="gal-image hide"><img src="images/art/circuit.jpg"></div>
+          <div id="gal-coll" class="gal-image hide"><img src="images/art/collage.jpg"></div>
+          <div id="gal-cam" class="gal-image hide"><img src="images/art/camera.jpg"></div>
+          <div id="gal-de" class="gal-image hide"><img src="images/art/deer.jpg"></div>
+          <div id="gal-fa" class="gal-image hide"><img src="images/art/face.jpg"></div>
         </div>
       </div>
       </div>
