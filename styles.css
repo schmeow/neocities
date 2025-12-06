@@ -829,8 +829,9 @@ input[type="reset"]:focus {
 .gal-button img {
   width: 150px !important;
   height: 150px !important;
+  object-fit: cover !important;
 }
 .gal-image {
   max-width: 300px;
-  object-fit: cover;
+  object-fit: contain !important;
 }
